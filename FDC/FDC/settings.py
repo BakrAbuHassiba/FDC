@@ -1,4 +1,5 @@
 
+import environ
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -115,3 +116,21 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+
+
+# env = environ.Env()
+# # Ensure this path points to your .env file
+# environ.Env.read_env(os.path.join(BASE_DIR, '..', '.env'))
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.fdenergies.com'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True  
+# EMAIL_HOST_USER = env('EMAIL_HOST_USER')  # Get from .env
+# EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD') # EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # on cmd do this -> set EMAIL_HOST_PASSWORD=your-secure-password
+EMAIL_HOST_USER = 'daw@fdenergies.com'
+EMAIL_HOST_PASSWORD = 'Dona@112021'
+DEFAULT_FROM_EMAIL = 'daw@fdenergies.com'
+
+

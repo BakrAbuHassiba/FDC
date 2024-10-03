@@ -1,4 +1,3 @@
-# your_app/models.py
 
 from django.db import models
 
@@ -25,3 +24,15 @@ class Project(models.Model):
 
     def __str__(self):
         return self.projectTitle
+
+
+class News(models.Model):
+    id = models.CharField(max_length=100, primary_key=True)
+    image = models.ImageField(upload_to='news_images/')
+    title = models.CharField(max_length=500)
+    date = models.CharField(max_length=100)
+    paragraph = models.CharField(max_length=500)
+    important=models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
