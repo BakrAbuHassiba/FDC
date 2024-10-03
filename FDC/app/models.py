@@ -21,7 +21,7 @@ class Project(models.Model):
     projectTitle = models.CharField(max_length=500)
     date = models.CharField(max_length=100)
     client = models.CharField(max_length=100)
-
+    important = models.BooleanField(default=False)
     def __str__(self):
         return self.projectTitle
 
